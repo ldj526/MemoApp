@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="memoViewModel"
+            type="com.android.example.memoapp.viewmodel.MemoViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
