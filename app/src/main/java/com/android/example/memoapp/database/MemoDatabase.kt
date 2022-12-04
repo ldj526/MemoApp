@@ -9,19 +9,21 @@ abstract class MemoDatabase : RoomDatabase() {
 
     companion object {
         @Volatile
-        private var instance: MemoDatabase? = null
+        private var INSTANCE: MemoDatabase? = null
 
-        fun getDatabase(context: Context): MemoDatabase? {
-            if (instance == null) {
-                synchronized(MemoDatabase::class) {
+        fun getDatabase(context: Context): MemoDatabase {
+            synchronized(this) {
+                var instance = INSTANCE
+                if (instance == null) {
                     instance = Room.databaseBuilder(
                         context.applicationContext,
                         MemoDatabase::class.java,
                         "memo_database"
                     ).build()
+                    INSTANCE = instance
                 }
+                return instance
             }
-            return instance
         }
     }
 }

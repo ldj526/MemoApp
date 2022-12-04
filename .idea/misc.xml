@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidProject/Kotlin/MyApp/MemoApp/app/src/main/res/layout/activity_main.xml" value="0.2866847826086957" />
+        <entry key="..\:/AndroidProject/Kotlin/MyApp/MemoApp/app/src/main/res/layout/fragment_memo_write.xml" value="0.1" />
         <entry key="..\:/AndroidProject/Kotlin/MyApp/MemoApp/app/src/main/res/layout/fragment_write.xml" value="0.2866847826086957" />
       </map>
     </option>
