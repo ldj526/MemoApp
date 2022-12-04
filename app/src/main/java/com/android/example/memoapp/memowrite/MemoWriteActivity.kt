@@ -38,5 +38,11 @@ class MemoWriteActivity : AppCompatActivity() {
                 finish()
             }
         }
+
+        binding.btnCancel.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 }
