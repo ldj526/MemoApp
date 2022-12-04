@@ -1,14 +1,14 @@
-package com.android.example.memoapp.memowrite
+package com.android.example.memoapp.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
-class MemoWriteViewModelFactory(private val application: Application) : ViewModelProvider.Factory {
+class MemoViewModelFactory(private val application: Application) : ViewModelProvider.Factory {
     @Suppress("unchecked_cast")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(MemoWriteViewModel::class.java)) {
-            return MemoWriteViewModel(application) as T
+        if (modelClass.isAssignableFrom(MemoViewModel::class.java)) {
+            return MemoViewModel(application) as T
         }
         throw IllegalArgumentException("Unknown ViewModel Class")
     }
