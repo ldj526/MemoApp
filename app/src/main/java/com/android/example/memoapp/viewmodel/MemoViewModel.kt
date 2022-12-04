@@ -2,14 +2,14 @@ package com.android.example.memoapp.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.*
-import com.android.example.memoapp.database.Memo
-import com.android.example.memoapp.database.MemoDatabase
-import com.android.example.memoapp.database.MemoRepository
+import com.android.example.memoapp.model.Memo
+import com.android.example.memoapp.data.MemoDatabase
+import com.android.example.memoapp.repository.MemoRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class MemoViewModel(application: Application) : AndroidViewModel(application) {
-    private val readAllData: LiveData<List<Memo>>
+    val readAllData: LiveData<List<Memo>>
     private val repository: MemoRepository
 
     init {
