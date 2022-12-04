@@ -1,4 +1,4 @@
-package com.android.example.memoapp.database
+package com.android.example.memoapp.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
