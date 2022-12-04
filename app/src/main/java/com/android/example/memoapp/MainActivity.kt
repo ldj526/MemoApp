@@ -28,5 +28,16 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+        binding.recyclerView.layoutManager =
+            GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false)
+
+        val adapter = MemoAdapter()
+        binding.recyclerView.adapter = adapter
+        memoViewModel.readAllData.observe(this, Observer {
+            Collections.reverse(it)
+            adapter.setData(it)
+        })
+
     }
 }
