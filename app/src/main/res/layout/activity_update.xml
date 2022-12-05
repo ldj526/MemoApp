@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="memoViewModel"
+            type="com.android.example.memoapp.viewmodel.MemoViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".memowrite.MemoWriteActivity">
+        tools:context=".MemoWriteActivity">
 
         <EditText
             android:id="@+id/et_title"
