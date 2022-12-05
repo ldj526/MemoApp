@@ -20,14 +20,17 @@ class MemoAdapter : RecyclerView.Adapter<MemoAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentItem = memoList[position]
+        val currentId = currentItem.id.toString()
         val currentTitle = currentItem.title
         val currentContent = currentItem.content
 
-        holder.binding.tvContent.text = currentItem.content
-        holder.binding.tvTitle.text = currentItem.title
+        holder.binding.tvId.text = currentId
+        holder.binding.tvContent.text = currentContent
+        holder.binding.tvTitle.text = currentTitle
 
         holder.binding.itemLayout.setOnClickListener {
             val intent = Intent(it.context, UpdateActivity::class.java)
+            intent.putExtra("currentId", currentId)
             intent.putExtra("currentTitle", currentTitle)
             intent.putExtra("currentContent", currentContent)
             it.context.startActivity(intent)
