@@ -29,4 +29,10 @@ class MemoViewModel(application: Application) : AndroidViewModel(application) {
             repository.updateMemo(memo)
         }
     }
+
+    fun deleteMemo(memo: Memo) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteMemo(memo)
+        }
+    }
 }

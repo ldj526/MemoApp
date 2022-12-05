@@ -12,6 +12,9 @@ interface MemoDao {
     @Update
     suspend fun updateMemo(memo: Memo)
 
+    @Delete
+    suspend fun deleteMemo(memo: Memo)
+
     @Query("SELECT * FROM memo_table ORDER BY id ASC")
     fun readAllData(): LiveData<List<Memo>>
 }
