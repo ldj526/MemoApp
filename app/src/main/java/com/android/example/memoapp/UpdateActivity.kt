@@ -37,5 +37,22 @@ class UpdateActivity : AppCompatActivity() {
         } else {
             Toast.makeText(this, "불러오기 실패", Toast.LENGTH_LONG).show()
         }
+
+        binding.btnUpdate.setOnClickListener {
+            val title = binding.etTitle.text.toString()
+            val content = binding.etContent.text.toString()
+
+            if (TextUtils.isEmpty(title) || TextUtils.isEmpty(content)) {
+                Toast.makeText(this, "데이터를 입력해주세요.", Toast.LENGTH_LONG).show()
+            } else {
+                val memo = Memo(currentId!!, title, content)
+                memoViewModel.updateMemo(memo)
+                finish()
+            }
+        }
+
+        binding.btnCancel.setOnClickListener {
+            finish()
+        }
     }
 }
