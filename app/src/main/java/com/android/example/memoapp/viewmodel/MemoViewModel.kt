@@ -18,9 +18,15 @@ class MemoViewModel(application: Application) : AndroidViewModel(application) {
         readAllData = repository.readAllData
     }
 
-    fun addMemo(memo: Memo){
-        viewModelScope.launch(Dispatchers.IO){
+    fun addMemo(memo: Memo) {
+        viewModelScope.launch(Dispatchers.IO) {
             repository.addMemo(memo)
+        }
+    }
+
+    fun updateMemo(memo: Memo) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.updateMemo(memo)
         }
     }
 }
