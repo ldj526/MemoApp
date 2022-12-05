@@ -1,5 +1,6 @@
 package com.android.example.memoapp
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -19,8 +20,18 @@ class MemoAdapter : RecyclerView.Adapter<MemoAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentItem = memoList[position]
+        val currentTitle = currentItem.title
+        val currentContent = currentItem.content
+
         holder.binding.tvContent.text = currentItem.content
         holder.binding.tvTitle.text = currentItem.title
+
+        holder.binding.itemLayout.setOnClickListener {
+            val intent = Intent(it.context, UpdateActivity::class.java)
+            intent.putExtra("currentTitle", currentTitle)
+            intent.putExtra("currentContent", currentContent)
+            it.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount() = memoList.size
