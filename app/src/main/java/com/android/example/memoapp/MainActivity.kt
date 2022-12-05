@@ -8,7 +8,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.android.example.memoapp.databinding.ActivityMainBinding
-import com.android.example.memoapp.memowrite.MemoWriteActivity
 import com.android.example.memoapp.viewmodel.MemoViewModel
 import com.android.example.memoapp.viewmodel.MemoViewModelFactory
 import java.util.*
@@ -26,7 +25,6 @@ class MainActivity : AppCompatActivity() {
         binding.btnFab.setOnClickListener {
             val intent = Intent(this, MemoWriteActivity::class.java)
             startActivity(intent)
-            finish()
         }
 
         binding.recyclerView.layoutManager =

@@ -1,14 +1,11 @@
-package com.android.example.memoapp.memowrite
+package com.android.example.memoapp
 
-import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import com.android.example.memoapp.MainActivity
-import com.android.example.memoapp.R
 import com.android.example.memoapp.databinding.ActivityMemoWriteBinding
 import com.android.example.memoapp.model.Memo
 import com.android.example.memoapp.viewmodel.MemoViewModel
@@ -33,15 +30,11 @@ class MemoWriteActivity : AppCompatActivity() {
             } else {
                 val memo = Memo(0, title, content)
                 memoViewModel.addMemo(memo)
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
                 finish()
             }
         }
 
         binding.btnCancel.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
             finish()
         }
     }
