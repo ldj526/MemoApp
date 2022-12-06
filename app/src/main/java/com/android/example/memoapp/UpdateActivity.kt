@@ -54,5 +54,11 @@ class UpdateActivity : AppCompatActivity() {
         binding.btnCancel.setOnClickListener {
             finish()
         }
+
+        binding.ivDelete.setOnClickListener {
+            val memo = Memo(currentId!!, currentTitle, currentContent)
+            memoViewModel.deleteMemo(memo)
+            finish()
+        }
     }
 }
